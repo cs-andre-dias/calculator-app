@@ -51,7 +51,6 @@ class CalculatorBrain {
                 executeBinaryOperation()
             case .Ac:
                 clearDisplay()
-                
             }
         }
     }
@@ -64,6 +63,7 @@ class CalculatorBrain {
         }
     }
     
+    
     private func clearDisplay(){
         accumulator = 0.0
     }
@@ -74,6 +74,7 @@ class CalculatorBrain {
         var binaryFunction: (Double, Double) -> Double
         var firstOperand: Double
     }
+    
     
     var result: Double {
         get {

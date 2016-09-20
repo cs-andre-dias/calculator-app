@@ -9,12 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var dotButton: UIButton!
     @IBOutlet private weak var display: UILabel!
     
     private var userIsInTheMiddleOfTyping = false
     
     @IBAction private func touchDigit(sender: UIButton) {
         let titleButton = sender.currentTitle!
+        if sender == dotButton && (display.text?.containsString("."))! {
+            return
+        }
         if userIsInTheMiddleOfTyping {
             let textInDisplay = display.text!
             display.text = textInDisplay + titleButton
@@ -24,7 +28,7 @@ class ViewController: UIViewController {
         
         userIsInTheMiddleOfTyping = true
     }
-    
+  
     private var displayValue: Double{
         get {
             return Double(display.text!)!
@@ -39,14 +43,17 @@ class ViewController: UIViewController {
     @IBAction private func performOperation(sender: UIButton) {
         
         if userIsInTheMiddleOfTyping {
-           calcBrain.setOperand(displayValue)
-           userIsInTheMiddleOfTyping = false
+            calcBrain.setOperand(displayValue)
+            userIsInTheMiddleOfTyping = false
         }
         
         if let mathSymbol = sender.currentTitle {
             calcBrain.performOperation(mathSymbol)
         }
+        
         displayValue = calcBrain.result
+        
+        
     }
 }
 
