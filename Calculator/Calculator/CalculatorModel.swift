@@ -22,13 +22,14 @@ class CalculatorBrain {
         case UnaryOperation((Double) -> Double)
         case BinaryOperation((Double, Double) -> Double)
         case Equals
+        case Ac
     }
     
     private var operations: Dictionary<String, Operation> = [
         "π": Operation.Constant(M_PI),
-        "e": Operation.Constant(M_E),
         "√": Operation.UnaryOperation(sqrt),
         "cos": Operation.UnaryOperation(cos),
+        "AC": Operation.Ac,
         "×": Operation.BinaryOperation({$0 * $1}),
         "÷": Operation.BinaryOperation({$0 / $1}),
         "+": Operation.BinaryOperation({$0 + $1}),
@@ -48,6 +49,8 @@ class CalculatorBrain {
                 pending = PendingBinaryOperationInfo(binaryFunction: foo, firstOperand: accumulator)
             case .Equals:
                 executeBinaryOperation()
+            case .Ac:
+                clearDisplay()
                 
             }
         }
@@ -59,6 +62,10 @@ class CalculatorBrain {
             pending = nil
             
         }
+    }
+    
+    private func clearDisplay(){
+        accumulator = 0.0
     }
     
     private var pending: PendingBinaryOperationInfo?
