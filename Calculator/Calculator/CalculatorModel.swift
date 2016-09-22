@@ -83,24 +83,6 @@ class CalculatorBrain {
     
     typealias PropertyList = AnyObject
     
-    var program: PropertyList {
-        get {
-            return internalProgram
-        }
-        set{
-            clearDisplay()
-            if let arrayOfOps = newValue as? [AnyObject] {
-                for ops in arrayOfOps {
-                    if let operand = ops as? Double {
-                        setOperand(operand)
-                    }else if let operation = ops as? String{
-                        performOperation(operation)
-                    }
-                }
-            }
-        }
-    }
-    
     
     var result: Double {
         get {

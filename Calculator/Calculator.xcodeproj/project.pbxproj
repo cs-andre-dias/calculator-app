@@ -100,6 +100,7 @@
 					7358DC981D8B29E70064C771 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = C2Z9K594GA;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -261,6 +262,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = concretesolutions.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -275,6 +277,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = concretesolutions.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
