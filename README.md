@@ -1,3 +1,4 @@
 # calculator-app
 
-A simple calculator app to study swift and ios
+Um simples app para estudar swift e ios
+
